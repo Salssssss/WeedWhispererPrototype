@@ -44,10 +44,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="GardenLayout.cs" />
+    <Compile Include="LayoutDAO.cs" />
+    <Compile Include="MyPlants.cs" />
+    <Compile Include="Plant.cs" />
+    <Compile Include="PlantDAO.cs" />
+    <Compile Include="PlantRecomendation.cs" />
     <Compile Include="RegisterUser.cs" />
+    <Compile Include="ScheduleDAO.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="UserDAO.cs" />
+    <Compile Include="UserVerifier.cs" />
+    <Compile Include="WaterScheduler.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>

@@ -1,13 +1,37 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-public class User
+﻿public class User
 {
 
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public string Email { get; set; }
-    public string Password { get; set; }
+    private string username;
+    private string email;
+    private string password;
+
+    public string Username
+    {
+        get { return username; }
+        set { username = value; }
+    }
+
+    public string Email
+    {
+        get { return email; }
+        set { email = value; }
+    }
+
+    public string Password
+    {
+        get { return password; }
+        set { password = value; }
+    }
+
+    public User()
+    {
+        // Default constructor
+    }
+
+    public User(string username, string email, string password)
+    {
+        Username = username;
+        Email = email;
+        Password = password;
+    }
 }
