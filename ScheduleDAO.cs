@@ -4,9 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WeedWhispererPrototype
+public class ScheduleDAO
 {
-    internal class ScheduleDAO
-    {
-    }
+
 }

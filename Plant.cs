@@ -1,41 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-public class Plant
+﻿public class Plant
 {
-    private int id;
-    private string name;
-    private string type;
-
-    public int Id
-    {
-        get { return id; }
-        set { id = value; }
-    }
-
-    public string Name
-    {
-        get { return name; }
-        set { name = value; }
-    }
-
-    public string Type
-    {
-        get { return type; }
-        set { type = value; }
-    }
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Symbol { get; set; }
+    public string PlantGroup { get; set; }
+    public string Duration { get; set; }
+    public string GrowthHabit { get; set; }
+    public string NativeStatus { get; set; }
 
     public Plant()
     {
         // Default constructor
     }
 
-    public Plant(int id, string name, string type)
+    public Plant(int id, string name, string symbol, string plantGroup, string duration, string growthHabit, string nativeStatus)
     {
         Id = id;
         Name = name;
-        Type = type;
+        Symbol = symbol;
+        PlantGroup = plantGroup;
+        Duration = duration;
+        GrowthHabit = growthHabit;
+        NativeStatus = nativeStatus;
     }
 }
