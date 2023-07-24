@@ -1,0 +1,3 @@
+C:\Users\andre\Source\Repos\WeedWhispererPrototype\obj\x86\Debug\WeedWhispererPrototype.csproj.AssemblyReference.cache
+C:\Users\andre\Source\Repos\WeedWhispererPrototype\obj\x86\Debug\WeedWhispererPrototype.csproj.SuggestedBindingRedirects.cache
+C:\Users\andre\Source\Repos\WeedWhispererPrototype\obj\x86\Debug\WeedWhispererPrototype.csproj.CoreCompileInputs.cache

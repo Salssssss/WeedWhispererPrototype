@@ -48,6 +48,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="gui.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui.Designer.cs">
+      <DependentUpon>gui.cs</DependentUpon>
+    </Compile>
     <Compile Include="GardenLayout.cs" />
     <Compile Include="LayoutDAO.cs" />
     <Compile Include="MyPlants.cs" />
