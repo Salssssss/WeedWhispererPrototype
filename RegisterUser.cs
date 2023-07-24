@@ -23,7 +23,7 @@ public class RegisterUser
         // Create a new user object
         User newUser = new User
         {
-            Name = name,
+            Username = name,
             Email = email,
             Password = password
         };
