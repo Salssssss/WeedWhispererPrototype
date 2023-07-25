@@ -7,9 +7,9 @@ public class ScheduleDAO
 {
     private readonly string connectionString;
 
-    public ScheduleDAO(string connectionString)
+    public ScheduleDAO()
     {
-        this.connectionString = connectionString;
+        this.connectionString = "Server=tcp:weedwhisperer.database.windows.net,1433;Initial Catalog=weedwhisperer;Persist Security Info=False;User ID=weeder;Password=Whisper123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
     }
 
     public void AddWaterSchedule(WaterSchedule schedule)

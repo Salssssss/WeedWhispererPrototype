@@ -7,9 +7,9 @@ public class UserDAO
 {
     private readonly string connectionString;
 
-    public UserDAO(string connectionString)
+    public UserDAO()
     {
-        this.connectionString = connectionString;
+        this.connectionString = "Server=tcp:weedwhisperer.database.windows.net,1433;Initial Catalog=weedwhisperer;Persist Security Info=False;User ID=weeder;Password=Whisper123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
     }
 
     public User GetUserById(int id)

@@ -9,9 +9,9 @@ public class PlantRecommendation
 {
   private PlantDAO plantDAO;
 
-  public PlantRecommendation(string connectionString)
+  public PlantRecommendation()
   { 
-    plantDAO = new PlantDAO(connectionString);
+    plantDAO = new PlantDAO();
   }
 
   public List<Plant> getRecommendedPlants(string nativeStatus = null, string growthHabit = null, string plantGroup = null, string duration = null)
