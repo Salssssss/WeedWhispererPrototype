@@ -1,58 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+
 public class MyPlants
 {
+    public int UserId { get; set; }
     public List<Plant> Plants { get; set; }
 
-    public MyPlants()
+    public MyPlants(int userId)
     {
+        UserId = userId;
         Plants = new List<Plant>();
     }
-
-    public void AddPlant(Plant plant)
+    public MyPlants GetPlantsByUserId(int userId)
     {
-        // Add plant to the list
-        if (!string.IsNullOrWhiteSpace(plant))
-        {
-            Plants.add(plant);
-            Console.WriteLine(plant + " has been added to your list of plants!");
-        }
-        else
-        {
-            Console.WriteLine("Plant name cannot be empty, please add the name of your plant.");
-        }   
-            
-    }
+        MyPlants myPlants = new MyPlants(userId);
 
-    public void RemovePlant(Plant plant)
-    {
-        // Remove plant from the list
-        if (Plants.contains(plant))
-        {
-            Plant.remove(plant);
-            Console.WriteLine(plant + " has been removed from your plnats.");
-        }
-        else
-        {
-            Console.WriteLine("Plant not found.");
-        }
-        
-    }
+        PlantDAO plantDAO = new PlantDAO("your_connection_string");
+        List<Plant> userPlants = plantDAO.GetPlantsByUserId(userId);
 
-    public List<Plant> GetPlants()
-    {
-        // Return the list of plants
-        if (Plants.count > 0)
-        {
-            return Plants;
-        }
-        else
-        {
-            Console.WriteLine("Your list is empty.");
-        }
-        
+        myPlants.Plants.AddRange(userPlants);
+
+        return myPlants;
     }
 }

@@ -129,4 +129,40 @@ public class PlantDAO
 
         return plants;
     }
+    public List<Plant> GetPlantsByUserId(int userId)
+    {
+        List<Plant> plants = new List<Plant>();
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            string query = "SELECT P.Id, P.Name, P.Symbol, P.PlantGroup, P.Duration, P.GrowthHabit, P.NativeStatus, " +
+                           "FROM Plants AS P " +
+                           "INNER JOIN UserPlants AS UP ON P.Id = UP.PlantId " +
+                           "WHERE UP.UserId = @UserId";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@UserId", userId);
+
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Plant plant = new Plant
+                {
+                    Id = (int)reader["Id"],
+                    Name = (string)reader["Name"],
+                    Symbol = (string)reader["Symbol"],
+                    PlantGroup = (string)reader["PlantGroup"],
+                    Duration = (string)reader["Duration"],
+                    GrowthHabit = (string)reader["GrowthHabit"],
+                    NativeStatus = (string)reader["NativeStatus"],
+                };
+
+                plants.Add(plant);
+            }
+        }
+
+        return plants;
+    }
 }
