@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -135,10 +136,11 @@ public class PlantDAO
 
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
-            string query = "SELECT P.Id, P.Name, P.Symbol, P.PlantGroup, P.Duration, P.GrowthHabit, P.NativeStatus, " +
-                           "FROM Plants AS P " +
-                           "INNER JOIN UserPlants AS UP ON P.Id = UP.PlantId " +
-                           "WHERE UP.UserId = @UserId";
+            string query = "SELECT P.Id, P.Name, P.Symbol, P.PlantGroup, P.Duration, P.GrowthHabit, P.NativeStatus " +
+               "FROM Plants AS P " +
+               "INNER JOIN UserPlants AS UP ON P.Id = UP.PlantId " +
+               "WHERE UP.UserId = @UserId";
+
 
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@UserId", userId);
@@ -164,5 +166,52 @@ public class PlantDAO
         }
 
         return plants;
+    }
+    public void AddUserPlant(Plant userPlant, int userID)
+    {
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            string query = "INSERT INTO UserPlants (UserId, PlantId) VALUES (@UserId, @PlantId)";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@UserId", userID);
+            command.Parameters.AddWithValue("@PlantId", userPlant.Id);
+
+            connection.Open();
+            command.ExecuteNonQuery();
+        }
+    }
+    public void RemoveUserPlant(int plantId, int userId)
+    {
+        try
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "DELETE FROM UserPlants WHERE PlantId = @PlantId AND UserId = @UserId";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@PlantId", plantId);
+                    command.Parameters.AddWithValue("@UserId", userId);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        Console.WriteLine($"Successfully removed PlantId {plantId} for UserId {userId} from UserPlants.");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"PlantId {plantId} for UserId {userId} not found in UserPlants.");
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("An error occurred while removing the plant from UserPlants: " + ex.Message);
+        }
     }
 }
