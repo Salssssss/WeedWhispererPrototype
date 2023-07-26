@@ -9,13 +9,13 @@ public class MyPlants
     public MyPlants(int userId)
     {
         UserId = userId;
-        Plants = GetMyPlants(userId);
+        Plants = GetMyPlants();
     }
 
-    public List<Plant> GetMyPlants(int userId)
+    public List<Plant> GetMyPlants()
     {
         PlantDAO plantDAO = new PlantDAO();
-        List<Plant> userPlantIds = plantDAO.GetPlantsByUserId(userId);
+        List<Plant> userPlantIds = plantDAO.GetPlantsByUserId(this.UserId);
         List<Plant> userPlants = new List<Plant>();
         foreach (Plant plant in userPlantIds)
         {
