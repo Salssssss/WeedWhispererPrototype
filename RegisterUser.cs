@@ -7,9 +7,9 @@ public class RegisterUser
 {
     private readonly UserDAO userDAO;
 
-    public RegisterUser(UserDAO userDAO)
+    public RegisterUser()
     {
-        this.userDAO = userDAO;
+        userDAO = new UserDAO();
     }
 
     public bool RegisterNewUser(string name, string email, string password)
