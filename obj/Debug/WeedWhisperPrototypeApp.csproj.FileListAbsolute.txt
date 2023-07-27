@@ -11,3 +11,4 @@ C:\Users\Gin\source\repos\WeedWhisperPrototypeApp\obj\Debug\WeedWhisperPrototype
 C:\Users\Gin\source\repos\WeedWhisperPrototypeApp\obj\Debug\WeedWhisperPrototypeApp.MyPlantsPage.resources
 C:\Users\Gin\source\repos\WeedWhisperPrototypeApp\obj\Debug\WeedWhisperPrototypeApp.UserRegisterLogin.resources
 C:\Users\Gin\source\repos\WeedWhisperPrototypeApp\obj\Debug\WeedWhisperPrototypeApp.LoggedInForm.resources
+C:\Users\Gin\source\repos\WeedWhisperPrototypeApp\obj\Debug\WeedWhisperPrototypeApp.PlantRecomendationPage.resources

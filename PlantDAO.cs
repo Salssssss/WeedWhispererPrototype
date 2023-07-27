@@ -74,62 +74,43 @@ public class PlantDAO
             return null;
         }
     }
-    public List<Plant> GetPlantsByCriteria(string nativeStatus = null, string growthHabit = null, string plantGroup = null, string duration = null)
+    public Plant GetPlantByName(string plantName)
     {
-        List<Plant> plants = new List<Plant>();
+        string query = "SELECT * FROM Plants WHERE Name = @PlantName";
 
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
-            string query = "SELECT Id, Name, Symbol, PlantGroup, Duration, GrowthHabit, NativeStatus FROM Plants WHERE 1=1";
-
-            if (!string.IsNullOrEmpty(nativeStatus))
-                query += " AND NativeStatus = @NativeStatus";
-
-            if (!string.IsNullOrEmpty(growthHabit))
-                query += " AND GrowthHabit = @GrowthHabit";
-
-            if (!string.IsNullOrEmpty(plantGroup))
-                query += " AND PlantGroup = @PlantGroup";
-
-            if (!string.IsNullOrEmpty(duration))
-                query += " AND Duration = @Duration";
-
-            SqlCommand command = new SqlCommand(query, connection);
-
-            if (!string.IsNullOrEmpty(nativeStatus))
-                command.Parameters.AddWithValue("@NativeStatus", nativeStatus);
-
-            if (!string.IsNullOrEmpty(growthHabit))
-                command.Parameters.AddWithValue("@GrowthHabit", growthHabit);
-
-            if (!string.IsNullOrEmpty(plantGroup))
-                command.Parameters.AddWithValue("@PlantGroup", plantGroup);
-
-            if (!string.IsNullOrEmpty(duration))
-                command.Parameters.AddWithValue("@Duration", duration);
-
-            connection.Open();
-            SqlDataReader reader = command.ExecuteReader();
-
-            while (reader.Read())
+            using (SqlCommand command = new SqlCommand(query, connection))
             {
-                Plant plant = new Plant
-                {
-                    Id = (int)reader["Id"],
-                    Name = (string)reader["Name"],
-                    Symbol = (string)reader["Symbol"],
-                    PlantGroup = (string)reader["PlantGroup"],
-                    Duration = (string)reader["Duration"],
-                    GrowthHabit = (string)reader["GrowthHabit"],
-                    NativeStatus = (string)reader["NativeStatus"]
-                };
+                command.Parameters.AddWithValue("@PlantName", plantName);
+                connection.Open();
 
-                plants.Add(plant);
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        // Create a new Plant object and populate its properties from the database
+                        Plant plant = new Plant
+                        {
+                            Id = Convert.ToInt32(reader["Id"]),
+                            Name = reader["Name"].ToString(),
+                            Symbol = reader["Symbol"].ToString(),
+                            PlantGroup = reader["PlantGroup"].ToString(),
+                            Duration = reader["Duration"].ToString(),
+                            GrowthHabit = reader["GrowthHabit"].ToString(),
+                            NativeStatus = reader["NativeStatus"].ToString()
+                        };
+
+                        return plant;
+                    }
+                }
             }
         }
 
-        return plants;
+        // If the plant is not found, return null
+        return null;
     }
+    
     public List<Plant> GetPlantsByUserId(int userId)
     {
         List<Plant> plants = new List<Plant>();

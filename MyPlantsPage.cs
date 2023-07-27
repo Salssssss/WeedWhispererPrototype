@@ -14,10 +14,14 @@ namespace WeedWhisperPrototypeApp
     public partial class MyPlantsPage : Form
     {
         private MyPlants myPlants;
-        public MyPlantsPage()
+        private int userId;
+        private PlantDAO plantDAO;
+        public MyPlantsPage(int userId)
         {
             InitializeComponent();
-            myPlants = new MyPlants(1);
+            this.userId = userId;
+            myPlants = new MyPlants(userId);
+            plantDAO = new PlantDAO();  
         }
 
         private void MyPlantsPage_Load(object sender, EventArgs e)
@@ -35,14 +39,45 @@ namespace WeedWhisperPrototypeApp
             // Get the current user's plants
             var plants = myPlants.GetMyPlants();
 
-            // Clear the text box
-            textBox1.Text = "";
+            checkedListBox1.Items.Clear();
 
-            // Display the plants in the text box
             foreach (Plant plant in plants)
             {
-                textBox1.Text += $"{plant.Name} ({plant.Symbol}) - {plant.PlantGroup}\r\n";
+                checkedListBox1.Items.Add($"{plant.Name} ({plant.Symbol}) - {plant.PlantGroup}\r\n");
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PlantRecomendationPage pl = new PlantRecomendationPage(userId);
+            pl.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            List<string> plants = new List<string>();
+            foreach (string plant in checkedListBox1.CheckedItems)
+            {
+                string plantname = plant.Split(' ')[0];          
+                plants.Add(plantname);
+            }
+            foreach (string plant in plants)
+            {
+                Plant plantToRemove = plantDAO.GetPlantByName(plant);
+                myPlants.RemovePlant(plantToRemove.Id);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            LoggedInForm loggedInForm = new LoggedInForm(userId);
+            loggedInForm.Show();
+
         }
     }
 }
