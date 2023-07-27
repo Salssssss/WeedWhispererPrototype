@@ -77,6 +77,7 @@ namespace WeedWhisperPrototypeApp
         {
             LoggedInForm loggedInForm = new LoggedInForm(userId);
             loggedInForm.Show();
+            this.Close();
 
         }
     }

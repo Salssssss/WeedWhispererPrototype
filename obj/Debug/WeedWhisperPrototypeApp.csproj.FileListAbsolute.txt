@@ -26,3 +26,17 @@ C:\Users\Fran\source\repos\Protoype2ndfolder\obj\Debug\WeedWhisperPrototypeApp.c
 C:\Users\Fran\source\repos\Protoype2ndfolder\obj\Debug\WeedWhisperPrototypeApp.csproj.CoreCompileInputs.cache
 C:\Users\Fran\source\repos\Protoype2ndfolder\obj\Debug\WeedWhisperPrototypeApp.exe
 C:\Users\Fran\source\repos\Protoype2ndfolder\obj\Debug\WeedWhisperPrototypeApp.pdb
+C:\Users\Gin\Source\Repos\WeedWhispererPrototype1111\bin\Debug\WeedWhisperPrototypeApp.exe.config
+C:\Users\Gin\Source\Repos\WeedWhispererPrototype1111\bin\Debug\WeedWhisperPrototypeApp.exe
+C:\Users\Gin\Source\Repos\WeedWhispererPrototype1111\bin\Debug\WeedWhisperPrototypeApp.pdb
+C:\Users\Gin\Source\Repos\WeedWhispererPrototype1111\obj\Debug\WeedWhisperPrototypeApp.csproj.AssemblyReference.cache
+C:\Users\Gin\Source\Repos\WeedWhispererPrototype1111\obj\Debug\WeedWhisperPrototypeApp.csproj.SuggestedBindingRedirects.cache
+C:\Users\Gin\Source\Repos\WeedWhispererPrototype1111\obj\Debug\WeedWhisperPrototypeApp.LoggedInForm.resources
+C:\Users\Gin\Source\Repos\WeedWhispererPrototype1111\obj\Debug\WeedWhisperPrototypeApp.MyPlantsPage.resources
+C:\Users\Gin\Source\Repos\WeedWhispererPrototype1111\obj\Debug\WeedWhisperPrototypeApp.PlantRecomendationPage.resources
+C:\Users\Gin\Source\Repos\WeedWhispererPrototype1111\obj\Debug\WeedWhisperPrototypeApp.Properties.Resources.resources
+C:\Users\Gin\Source\Repos\WeedWhispererPrototype1111\obj\Debug\WeedWhisperPrototypeApp.UserRegisterLogin.resources
+C:\Users\Gin\Source\Repos\WeedWhispererPrototype1111\obj\Debug\WeedWhisperPrototypeApp.csproj.GenerateResource.cache
+C:\Users\Gin\Source\Repos\WeedWhispererPrototype1111\obj\Debug\WeedWhisperPrototypeApp.csproj.CoreCompileInputs.cache
+C:\Users\Gin\Source\Repos\WeedWhispererPrototype1111\obj\Debug\WeedWhisperPrototypeApp.exe
+C:\Users\Gin\Source\Repos\WeedWhispererPrototype1111\obj\Debug\WeedWhisperPrototypeApp.pdb
