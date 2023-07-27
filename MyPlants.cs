@@ -5,18 +5,20 @@ public class MyPlants
 {
     public int UserId { get; set; }
     public List<Plant> Plants { get; set; }
+    private PlantDAO plantDAO;
 
     public MyPlants(int userId)
     {
         UserId = userId;
         Plants = GetMyPlants();
+        Plants = GetMyPlants() ?? new List<Plant>();
     }
 
     public List<Plant> GetMyPlants()
     {
-        PlantDAO plantDAO = new PlantDAO();
         List<Plant> userPlantIds = plantDAO.GetPlantsByUserId(this.UserId);
         List<Plant> userPlants = new List<Plant>();
+        
         foreach (Plant plant in userPlantIds)
         {
             userPlants.Add(plantDAO.GetPlantById(plant.Id));
@@ -27,7 +29,6 @@ public class MyPlants
 
     public void AddPlant(Plant plant)
     {
-        PlantDAO userPlantDAO = new PlantDAO();
         userPlantDAO.AddUserPlant(plant, UserId);
         Plants.Add(plant);
     }
@@ -38,8 +39,6 @@ public class MyPlants
         if (plantToRemove != null)
         {
             Plants.Remove(plantToRemove);
-
-            PlantDAO plantDAO = new PlantDAO();
             plantDAO.RemoveUserPlant(plantId, UserId);
         }
         else
