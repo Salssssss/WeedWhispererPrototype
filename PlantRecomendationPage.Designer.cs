@@ -38,8 +38,10 @@
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.goButton = new System.Windows.Forms.Button();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.addButton = new System.Windows.Forms.Button();
             this.backButton = new System.Windows.Forms.Button();
+            this.addButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -113,6 +115,7 @@
             // 
             // goButton
             // 
+            this.goButton.BackgroundImage = global::WeedWhisperPrototypeApp.Properties.Resources.Purple_background_button;
             this.goButton.Location = new System.Drawing.Point(640, 22);
             this.goButton.Name = "goButton";
             this.goButton.Size = new System.Drawing.Size(75, 23);
@@ -123,24 +126,17 @@
             // 
             // checkedListBox1
             // 
+            this.checkedListBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Location = new System.Drawing.Point(40, 77);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(399, 319);
             this.checkedListBox1.TabIndex = 9;
-            // 
-            // addButton
-            // 
-            this.addButton.Location = new System.Drawing.Point(568, 194);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(105, 23);
-            this.addButton.TabIndex = 10;
-            this.addButton.Text = "Add to My Plants";
-            this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged_1);
             // 
             // backButton
             // 
+            this.backButton.BackgroundImage = global::WeedWhisperPrototypeApp.Properties.Resources.Purple_background_button;
             this.backButton.Location = new System.Drawing.Point(713, 415);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(75, 23);
@@ -149,11 +145,32 @@
             this.backButton.UseVisualStyleBackColor = true;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
+            // addButton
+            // 
+            this.addButton.BackgroundImage = global::WeedWhisperPrototypeApp.Properties.Resources.Purple_background_button;
+            this.addButton.Location = new System.Drawing.Point(568, 194);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(105, 23);
+            this.addButton.TabIndex = 10;
+            this.addButton.Text = "Add to My Plants";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WeedWhisperPrototypeApp.Properties.Resources.home_background;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(809, 848);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
             // PlantRecomendationPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 849);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.checkedListBox1);
@@ -166,8 +183,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "PlantRecomendationPage";
             this.Text = "PlantRecomendationPage";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,5 +206,6 @@
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

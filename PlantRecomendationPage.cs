@@ -143,5 +143,10 @@ namespace WeedWhisperPrototypeApp
         {
             this.Close();
         }
+
+        private void checkedListBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

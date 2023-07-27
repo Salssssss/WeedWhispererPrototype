@@ -103,6 +103,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UserRegisterLogin.resx">
       <DependentUpon>UserRegisterLogin.cs</DependentUpon>
@@ -125,6 +126,9 @@
   <ItemGroup>
     <Content Include="bin\Debug\WeedWhisperPrototypeApp.exe" />
     <Content Include="bin\Debug\WeedWhisperPrototypeApp.pdb" />
+    <None Include="Resources\Purple background button.PNG" />
+    <None Include="Resources\Sign in.PNG" />
+    <None Include="Resources\home-background.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
